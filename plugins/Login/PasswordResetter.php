@@ -321,7 +321,7 @@ class PasswordResetter
                       . substr($data, $halfDataLen)
                       ;
 
-        return $this->hashData($stringToHash);
+        return $this->passwordHelper->hash($stringToHash);
     }
 
     /**
