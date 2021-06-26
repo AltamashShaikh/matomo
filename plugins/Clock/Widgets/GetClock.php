@@ -8,11 +8,9 @@
  */
 namespace Piwik\Plugins\Clock\Widgets;
 
-use DateTimeZone;
 use Piwik\API\Request;
 use Piwik\Widget\Widget;
 use Piwik\Widget\WidgetConfig;
-use Piwik\View;
 
 /**
  * This class allows you to add your own widget to the Piwik platform. In case you want to remove widgets from another
@@ -74,13 +72,9 @@ class GetClock extends Widget
     public function render()
     {
         $defaultTimeZone = Request::processRequest('SitesManager.getDefaultTimezone');
-        $time = new \DateTime('now', new DateTimeZone($defaultTimeZone));
-        $timezoneOffset = $time->format('P');
 
         return $this->renderTemplate('getClock', array(
-            'defaultTimeZone' => $defaultTimeZone,
-            'defaultTimeZoneOffset' => $timezoneOffset,
-
+            'defaultTimeZone' => $defaultTimeZone
         ));
     }
 
