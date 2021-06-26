@@ -1,0 +1,18 @@
+<div id="clock-widget-div">
+    <div id="local-time">
+        <span class="">Current Local Time<span id="local-timezone"></span>: </span>
+        <strong>
+            <span id="clock-widget-time-local" class="clock" data-timezone=""></span>
+        </strong>
+    </div>
+    <br>
+    <div id="website-time">
+        <span class="">Current Default Website Time({{ defaultTimeZone }}): </span>
+        <strong>
+            <span id="clock-widget-time-default-website" class="clock" data-timezone="{{ defaultTimeZone }}"></span>
+        </strong>
+    </div>
+</div>
+<script type="text/javascript">
+    clockLoaded();
+</script>
